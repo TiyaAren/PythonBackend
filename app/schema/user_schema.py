@@ -1,23 +1,18 @@
-# app/schema/user_schema.py
-
-from pydantic import BaseModel
-
+from pydantic import BaseModel, EmailStr, Field
 
 class UserCreate(BaseModel):
-    name: str
-    email: str
-    password: str
-
+    name: str = Field(..., min_length=1)
+    email: EmailStr
+    password: str = Field(..., min_length=6)
 
 class UserLogin(BaseModel):
-    email: str
+    email: EmailStr
     password: str
-
 
 class UserOut(BaseModel):
     id: int
     name: str
-    email: str
+    email: EmailStr
 
     class Config:
         orm_mode = True
