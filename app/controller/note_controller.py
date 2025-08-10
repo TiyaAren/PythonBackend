@@ -1,5 +1,7 @@
 # app/controller/note_controller.py
-from fastapi import APIRouter, Depends, HTTPException
+from typing import List
+
+from fastapi import APIRouter, Depends, HTTPException, Body
 from sqlalchemy.orm import Session
 from app.configuration.database import get_db
 from app.model.note_model import Note
@@ -8,6 +10,7 @@ from app.service.note_service import get_user_notes, add_note, edit_note, remove
 from fastapi.security import OAuth2PasswordBearer
 from jose import jwt, JWTError
 from app.configuration.security import SECRET_KEY, ALGORITHM
+from fastapi.responses import JSONResponse
 
 router = APIRouter(prefix="/notes", tags=["notes"])
 
@@ -50,3 +53,20 @@ def delete_note(note_id: str, user_id: int = Depends(get_current_user_id), db: S
         raise HTTPException(status_code=404, detail="Note not found")
     remove_note(db, note_id)
     return {"detail": "Note deleted"}
+
+@router.delete("/", response_class=JSONResponse, tags=["notes"])
+def delete_notes_by_ids(
+    ids: List[str] = Body(..., embed=True, description="List of note IDs to delete"),
+    user_id: int = Depends(get_current_user_id),
+    db: Session = Depends(get_db)
+):
+    notes = db.query(Note).filter(Note.id.in_(ids), Note.id_user == user_id).all()
+    if len(notes) != len(ids):
+        raise HTTPException(status_code=404, detail="Some notes not found or do not belong to the user")
+
+    for note in notes:
+
+        db.delete(note)
+    db.commit()
+
+    return {"detail": f"{len(notes)} notes deleted"}
