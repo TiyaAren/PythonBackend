@@ -5,32 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d357ba6-f6b3-400d-b98e-391bedea6d50" name="Changes" comment="reg and log1">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/configuration/security.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/service/user_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PythonBackend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PythonBackend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controller/note_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controller/selfcare_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/model/note_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/model/selfcare_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repository/note_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repository/selfcare_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schema/note_schema.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schema/selfcare_schema.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/service/note_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/service/selfcare_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/configuration/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/configuration/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/configuration/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controller/auth_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/auth_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/user_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repository/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repository/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repository/user_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schema/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/schema/user_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schema/user_schema.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/service/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/service/auth_service.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +37,7 @@
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="SOFT" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -71,20 +61,21 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.database.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.user_repository.executor&quot;: &quot;Run&quot;,
-    &quot;Python.user_schema.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.database.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.note_controller.executor": "Run",
+    "Python.user_repository.executor": "Run",
+    "Python.user_schema.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\admin\IdeaProjects\PythonBackend" />
