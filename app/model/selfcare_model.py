@@ -6,7 +6,7 @@ class SelfCare(Base):
     __tablename__ = "selfcare"
 
     id = Column(String, primary_key=True, index=True)  # UUID в строке
-    id_user = Column(Integer, nullable=False)
+    id_user = Column(String, nullable=False)
     date = Column(String, nullable=False)
     mood = Column(String, nullable=False)
     emotions = Column(ARRAY(String))

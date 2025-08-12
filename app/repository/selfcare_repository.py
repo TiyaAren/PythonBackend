@@ -6,10 +6,10 @@ from datetime import datetime
 
 import json
 
-def get_selfcare_by_user_date(db: Session, user_id: int, date: datetime.date):
+def get_selfcare_by_user_date(db: Session, user_id: str, date: datetime.date):
     return db.query(SelfCare).filter(SelfCare.user_id == user_id, SelfCare.date == date).first()
 
-def create_selfcare(db: Session, user_id: int, selfcare: SelfCareCreate):
+def create_selfcare(db: Session, user_id: str, selfcare: SelfCareCreate):
     emotions_str = json.dumps(selfcare.emotions or [])
     activities_str = json.dumps(selfcare.activities or [])
     db_selfcare = SelfCare(

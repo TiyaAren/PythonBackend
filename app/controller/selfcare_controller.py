@@ -30,15 +30,15 @@ def get_current_user_id(token: str = Depends(oauth2_scheme)):
         raise HTTPException(status_code=401, detail="Invalid token")
 
 @router.get("/", response_model=list[SelfCareOut])
-def read_selfcare(user_id: int = Depends(get_current_user_id), db: Session = Depends(get_db)):
+def read_selfcare(user_id: str = Depends(get_current_user_id), db: Session = Depends(get_db)):
     return get_selfcare_by_user(db, user_id)
 
 @router.post("/", response_model=SelfCareOut)
-def create_selfcare(selfcare: SelfCareCreate, user_id: int = Depends(get_current_user_id), db: Session = Depends(get_db)):
+def create_selfcare(selfcare: SelfCareCreate, user_id: str = Depends(get_current_user_id), db: Session = Depends(get_db)):
     return save_or_update_selfcare(db, user_id, selfcare)
 
 @router.put("/{selfcare_id}", response_model=SelfCareOut)
-def update_selfcare_entry(selfcare_id: str, selfcare: SelfCareCreate, user_id: int = Depends(get_current_user_id), db: Session = Depends(get_db)):
+def update_selfcare_entry(selfcare_id: str, selfcare: SelfCareCreate, user_id: str = Depends(get_current_user_id), db: Session = Depends(get_db)):
     updated = update_selfcare(db, selfcare_id, selfcare, user_id)
     if not updated:
         raise HTTPException(status_code=404, detail="SelfCare entry not found")

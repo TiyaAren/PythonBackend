@@ -10,11 +10,11 @@ class SelfCareBase(BaseModel):
 
 class SelfCareCreate(SelfCareBase):
     id: Optional[str]  # Можно передавать или генерить на сервере
-    id_user: int
+    id_user: str
 
 class SelfCareOut(SelfCareBase):
     id: str
-    id_user: int
+    id_user: str
 
     class Config:
         orm_mode = True

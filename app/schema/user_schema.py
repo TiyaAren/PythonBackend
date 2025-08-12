@@ -15,12 +15,12 @@ class UserLogin(BaseModel):
 class LoginResponse(BaseModel):
     access_token: str
     token_type: str
-    id_user: int
+    id_user: str
     name: str
 
 
 class UserOut(BaseModel):
-    id: int
+    id: str
     name: str
     email: EmailStr
 

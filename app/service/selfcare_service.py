@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from app.model.selfcare_model import SelfCare
 from app.schema.selfcare_schema import SelfCareCreate
 
-def save_or_update_selfcare(db: Session, user_id: int, selfcare: SelfCareCreate):
+def save_or_update_selfcare(db: Session, user_id: str, selfcare: SelfCareCreate):
     existing = db.query(SelfCare).filter(SelfCare.id_user == user_id, SelfCare.date == selfcare.date).first()
     if existing:
         # Обновляем
@@ -30,10 +30,10 @@ def save_or_update_selfcare(db: Session, user_id: int, selfcare: SelfCareCreate)
         db.refresh(new_selfcare)
         return new_selfcare
 
-def get_selfcare_by_user(db: Session, user_id: int):
+def get_selfcare_by_user(db: Session, user_id: str):
     return db.query(SelfCare).filter(SelfCare.id_user == user_id).all()
 
-def update_selfcare(db: Session, selfcare_id: str, selfcare: SelfCareCreate, user_id: int):
+def update_selfcare(db: Session, selfcare_id: str, selfcare: SelfCareCreate, user_id: str):
     existing = db.query(SelfCare).filter(SelfCare.id == selfcare_id, SelfCare.id_user == user_id).first()
     if not existing:
         return None

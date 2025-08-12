@@ -6,7 +6,7 @@ class Note(Base):
     __tablename__ = "notes"
 
     id = Column(String, primary_key=True, index=True)  # UUID в строке
-    id_user = Column(Integer, nullable=False)
+    id_user = Column(String, nullable=False)
     title = Column(String, nullable=False)
     content = Column(String, nullable=False)
     date = Column(String, nullable=False)

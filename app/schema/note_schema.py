@@ -12,11 +12,11 @@ class NoteBase(BaseModel):
 
 class NoteCreate(NoteBase):
     id: Optional[str]
-    id_user: int
+    id_user: str
 
 class NoteOut(NoteBase):
     id: str
-    id_user: int
+    id_user: str
 
     class Config:
         orm_mode = True
