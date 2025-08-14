@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d357ba6-f6b3-400d-b98e-391bedea6d50" name="Changes" comment="добавление эндпоинта /me">
+    <list default="true" id="4d357ba6-f6b3-400d-b98e-391bedea6d50" name="Changes" comment="docker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/selfcare_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/selfcare_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/service/selfcare_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/service/selfcare_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755032794760</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="docker">
+      <option name="closed" value="true" />
+      <created>1755081347695</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1755081347695</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,6 +142,7 @@
     <MESSAGE value="Note and Selfcare All" />
     <MESSAGE value="id везде str" />
     <MESSAGE value="добавление эндпоинта /me" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавление эндпоинта /me" />
+    <MESSAGE value="docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker" />
   </component>
 </project>

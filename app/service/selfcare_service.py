@@ -44,3 +44,12 @@ def update_selfcare(db: Session, selfcare_id: str, selfcare: SelfCareCreate, use
     db.commit()
     db.refresh(existing)
     return existing
+
+def delete_selfcare(db: Session, selfcare_id: str, user_id: str):
+    from app.model.selfcare_model import SelfCare
+    entry = db.query(SelfCare).filter(SelfCare.id == selfcare_id, SelfCare.id_user == user_id).first()
+    if not entry:
+        return None
+    db.delete(entry)
+    db.commit()
+    return True

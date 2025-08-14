@@ -1,11 +1,11 @@
 # app/controller/selfcare_controller.py
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
-from app.schema.selfcare_schema import SelfCareCreate, SelfCareOut
-from app.configuration.database import SessionLocal, get_db
-from app.service.selfcare_service import save_or_update_selfcare, get_selfcare_by_user, update_selfcare
 from fastapi.security import OAuth2PasswordBearer
 from jose import jwt, JWTError
+from sqlalchemy.orm import Session
+from app.configuration.database import get_db
+from app.schema.selfcare_schema import SelfCareCreate, SelfCareOut
+from app.service.selfcare_service import save_or_update_selfcare, get_selfcare_by_user, update_selfcare, delete_selfcare
 
 router = APIRouter(prefix="/selfcare", tags=["selfcare"])
 
@@ -43,3 +43,11 @@ def update_selfcare_entry(selfcare_id: str, selfcare: SelfCareCreate, user_id: s
     if not updated:
         raise HTTPException(status_code=404, detail="SelfCare entry not found")
     return updated
+
+
+@router.delete("/{selfcare_id}")
+def delete_selfcare_entry(selfcare_id: str, user_id: str = Depends(get_current_user_id), db: Session = Depends(get_db)):
+    deleted = delete_selfcare(db, selfcare_id, user_id)
+    if not deleted:
+        raise HTTPException(status_code=404, detail="SelfCare entry not found")
+    return {"message": "SelfCare entry deleted successfully"}
