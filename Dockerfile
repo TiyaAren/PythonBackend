@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Копируем весь проект в контейнер
 COPY . .
 
-# Устанавливаем переменные окружения (опционально)
+# Устанавливаем переменные окружения
 ENV DATABASE_URL=postgresql://postgres:admin@db:5432/mydb
 ENV PYTHONUNBUFFERED=1
 
@@ -22,4 +22,4 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE 8000
 
 # Команда для запуска приложения через Uvicorn
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
