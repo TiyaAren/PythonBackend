@@ -51,3 +51,4 @@ def delete_selfcare_entry(selfcare_id: str, user_id: str = Depends(get_current_u
     if not deleted:
         raise HTTPException(status_code=404, detail="SelfCare entry not found")
     return {"message": "SelfCare entry deleted successfully"}
+# /

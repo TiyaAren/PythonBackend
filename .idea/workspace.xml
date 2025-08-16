@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4d357ba6-f6b3-400d-b98e-391bedea6d50" name="Changes" comment="requirements.txt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +137,23 @@
       <option name="project" value="LOCAL" />
       <updated>1755359495902</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="requirements.txt">
+      <option name="closed" value="true" />
+      <created>1755365498646</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1755365498646</updated>
+    </task>
+    <task id="LOCAL-00009" summary="requirements.txt">
+      <option name="closed" value="true" />
+      <created>1755365655189</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1755365655189</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,6 +173,7 @@
     <MESSAGE value="id везде str" />
     <MESSAGE value="добавление эндпоинта /me" />
     <MESSAGE value="docker" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="requirements.txt" />
     <option name="LAST_COMMIT_MESSAGE" value="requirements.txt" />
   </component>
