@@ -19,11 +19,13 @@ services:
     depends_on:
       - db
     ports:
-      - "8000:8000"
+      - "8000:8000"        # проброс порта наружу
     environment:
       DATABASE_URL: postgresql://postgres:admin@db:5432/mydb
-    volumes:
-      - .:/app
+      PYTHONUNBUFFERED: 1
+    command: uvicorn main:app --host 0.0.0.0 --port 8000  # убедимся, что слушает 0.0.0.0
+    # volumes:                # можно закомментировать для продакшена
+    #   - .:/app
 
 volumes:
   postgres_data:
