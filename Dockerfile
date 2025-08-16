@@ -1,25 +1,20 @@
-# Используем официальный образ Python 3.11
-FROM python:3.11-slim
+# Используем официальный Python-образ
+FROM python:3.10-slim
 
-# Устанавливаем рабочую директорию внутри контейнера
+# Устанавливаем рабочую директорию
 WORKDIR /app
 
 # Копируем файлы зависимостей
 COPY requirements.txt .
 
 # Устанавливаем зависимости
-RUN pip install --no-cache-dir --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Копируем весь проект в контейнер
+# Копируем весь проект внутрь контейнера
 COPY . .
 
-# Устанавливаем переменные окружения (опционально)
-ENV DATABASE_URL=postgresql://postgres:admin@db:5432/mydb
-ENV PYTHONUNBUFFERED=1
-
-# Открываем порт для FastAPI
+# Открываем порт
 EXPOSE 8000
 
-# Команда для запуска приложения через Uvicorn
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+# Команда запуска
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
